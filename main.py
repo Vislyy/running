@@ -55,7 +55,7 @@ class Cyborg(BaseSprite):
         self.x = x
         self.direction = "forward"
         self.target_x = target_x
-        self.target_x = target_y
+        self.target_y = target_y
     def update(self):
         if self.direction == "forward":
             self.hitbox.x += self.speed

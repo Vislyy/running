@@ -72,12 +72,12 @@ window = pygame.display.set_mode([1080, 640])
 fps = pygame.time.Clock()
 background_img = pygame.image.load("images/background.jpg")
 background_img = pygame.transform.scale(background_img, [1080, 640])
-hero = Hero(15, 30, 50, 50, 5, "images/hero.png")
-cyborg = Cyborg(200, 200, 50, 50, 5, "images/cyborg.png", 220, 200)
+hero = Hero(15, 45, 50, 50, 5, "images/hero.png")
+cyborg = Cyborg(450, 220, 50, 50, 2.5, "images/cyborg.png", 550, 220)
 walls = [
     Wall(0, 0, 250, 30, [35, 117, 2]),
-    Wall(0, 90, 130, 30, [35, 117, 2]),
-    Wall(130, 90, 30, 700, [35, 117, 2]),
+    Wall(0, 120, 130, 30, [35, 117, 2]),
+    Wall(130, 120, 30, 700, [35, 117, 2]),
     Wall(250, 0, 30, 550, [35, 117, 2]),
     Wall(250, 550, 200, 30, [35, 117, 2]),
     Wall(420, 0, 30, 550, [35, 117, 2])
@@ -101,7 +101,7 @@ while running:
             pygame.quit()
     for wall in walls:
         if hero.hitbox.colliderect(wall.hitbox):
-            hero.hitbox.x, hero.hitbox.y = 15, 25
+            hero.hitbox.x, hero.hitbox.y = 15, 45
             kick_sound.play()
     if hero.hitbox.colliderect(cyborg.hitbox):
         break
